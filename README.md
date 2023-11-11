@@ -2,6 +2,6 @@
  How to use docker to train ML Model
 
 ```
-sudo docker build -f Dockerfile -t docker_ml . -no-cache
+sudo docker build -f Dockerfile -t docker_ml . --no-cache
 
 ```
