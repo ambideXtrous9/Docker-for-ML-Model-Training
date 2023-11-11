@@ -33,6 +33,12 @@ sudo docker run -ti docker_ml /bin/bash -c "cd src && python temp.py"
 
 ```
 
+Run the Docker Image and open Terminal
+
+```
+sudo docker run -ti docker_ml /bin/bash
+```
+
 Remove one or more specific images
 
 ```
