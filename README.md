@@ -1,5 +1,13 @@
 # Docker for ML Model Training
- How to use docker to train ML Model
+
+<p align="center">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=docker,py,git,pytorch," />
+  </a>
+</p>
+
+
+How to use docker to train ML Model
 
 Check Docker Images
 ```
