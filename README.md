@@ -22,20 +22,20 @@ sudo docker ps
 
 Build the Docker Image
 
-```
-@@ sudo docker build -f Dockerfile -t docker_ml . --no-cache @@
+```diff
+- sudo docker build -f Dockerfile -t docker_ml . --no-cache @@
 ```
 
 Run the Docker Image
 
 ```diff
-@@ sudo docker run -ti docker_ml /bin/bash -c "cd src && python temp.py" @@
++ sudo docker run -ti docker_ml /bin/bash -c "cd src && python temp.py" @@
 
 ```
 
 Remove one or more specific images
 
-```diff
+```
 sudo docker rmi <Image_Name1> <Image_Name2>
 ```
 
