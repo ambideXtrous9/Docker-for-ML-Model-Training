@@ -28,14 +28,14 @@ Build the Docker Image
 
 Run the Docker Image
 
-```
+```diff
 + sudo docker run -ti docker_ml /bin/bash -c "cd src && python temp.py"
 
 ```
 
 Remove one or more specific images
 
-```
+```diff
 sudo docker rmi <Image_Name1> <Image_Name2>
 ```
 
