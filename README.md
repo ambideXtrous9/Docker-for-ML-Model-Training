@@ -23,13 +23,13 @@ sudo docker ps
 Build the Docker Image
 
 ```diff
-- sudo docker build -f Dockerfile -t docker_ml . --no-cache @@
+- sudo docker build -f Dockerfile -t docker_ml . --no-cache 
 ```
 
 Run the Docker Image
 
 ```diff
-+ sudo docker run -ti docker_ml /bin/bash -c "cd src && python temp.py" @@
++ sudo docker run -ti docker_ml /bin/bash -c "cd src && python temp.py" 
 
 ```
 
