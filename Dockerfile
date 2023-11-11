@@ -15,6 +15,8 @@ RUN conda create -y -n ml
 
 COPY . /src 
 
+
 RUN /bin/bash -c "cd src \
     && source activate ml \
+    && python -m pip install --upgrade pip \
     && pip install -r requirements.txt"

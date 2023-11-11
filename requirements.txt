@@ -2,9 +2,13 @@ scikit-learn
 numpy
 pandas
 matplotlib
-imutils 
+imutils
+tensorflow
+opencv-python
+opencv-contrib-python 
 wget 
 split-folders 
-# timm 
-# torch 
-# torchvision  
+timm 
+torch 
+torchvision
+lightning  
