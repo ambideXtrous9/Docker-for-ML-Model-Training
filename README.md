@@ -56,3 +56,9 @@ Delete all images
 ```
 docker system prune -a
 ```
+
+Docker Compose
+
+```
+docker compose up --build
+```
