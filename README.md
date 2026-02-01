@@ -6,59 +6,130 @@
   </a>
 </p>
 
+A comprehensive cheat sheet for managing Docker containers, images, and compose environments for Machine Learning workflows.
 
-How to use docker to train ML Model
+## 1. Image Operations
 
-Check Docker Images
-```
-sudo docker images
-```
+**Build Docker Image**
+```bash
+# Basic build
+sudo docker build -t docker_ml .
 
-Check Docker Running Images
-
-```
-sudo docker ps
-```
-
-Build the Docker Image
-
-```diff
+# Build without cache (force rebuild)
 sudo docker build -f Dockerfile -t docker_ml . --no-cache 
 ```
 
-Run the Docker Image
-
-```diff
-sudo docker run -ti docker_ml /bin/bash -c "cd src && python temp.py" 
-
+**List Images**
+```bash
+sudo docker images
 ```
 
-Run the Docker Image and open Terminal
+**Remove Images**
+```bash
+# Remove specific image(s)
+sudo docker rmi <Image_Name_or_ID>
 
-```
-sudo docker run -ti docker_ml /bin/bash
-```
-
-Remove one or more specific images
-
-```
-sudo docker rmi <Image_Name1> <Image_Name2>
+# Remove all unused images
+sudo docker image prune -a
 ```
 
-Stop all Docker images
+## 2. Container Operations
 
+**Run Containers**
+```bash
+# Run and open interactive terminal (bash)
+sudo docker run -it docker_ml /bin/bash
+
+# Run specific command inside container
+sudo docker run -it docker_ml /bin/bash -c "cd src && python temp.py"
+
+# Run in background (detached mode)
+sudo docker run -d -p 8080:8080 --name my_ml_container docker_ml
 ```
+
+**Manage Containers**
+```bash
+# List running containers
+sudo docker ps
+
+# List all containers (including stopped ones)
+sudo docker ps -a
+
+# Stop a specific container
+sudo docker stop <Container_ID_or_Name>
+
+# Stop ALL running containers
 sudo docker stop $(sudo docker ps -a -q)
+
+# Remove a specific container
+sudo docker rm <Container_ID_or_Name>
 ```
 
-Delete all images
-
+**Interactive Access**
+```bash
+# Access shell of a running container
+sudo docker exec -it <Container_ID_or_Name> /bin/bash
 ```
-docker system prune -a
-```
 
-Docker Compose
+## 3. Docker Compose Workflow
 
-```
+**Start Services**
+```bash
+# Start and build images
 docker compose up --build
+
+# Start in detached mode (background)
+docker compose up -d
+```
+
+**Stop Services**
+```bash
+# Stop and remove containers, networks
+docker compose down
+
+# Stop specific environment file
+docker compose -f docker-compose-development.yml down
+```
+
+**View Compose Logs**
+```bash
+docker compose logs -f
+```
+
+## 4. specific project commands
+
+**Stop the running containers**
+```bash
+docker compose -f docker-compose-development.yml down
+```
+
+**Check Logs for Backend**
+```bash
+sudo docker logs -f recall-riskscore-backend
+```
+
+## 5. Debugging & Maintenance
+
+**Logs & monitoring**
+```bash
+# Follow log output of a specific container
+sudo docker logs -f <Container_ID_or_Name>
+
+# View resource usage stats (CPU/Memory) - Critical for ML
+sudo docker stats
+```
+
+**Inspection**
+```bash
+# Inspect container details (JSON format)
+sudo docker inspect <Container_ID_or_Name>
+```
+
+**System Cleanup**
+```bash
+# Remove unused images, containers, and networks to free up space
+docker system prune -f
+
+# Deep clean (including unused images)
+docker system prune -a
 ```
