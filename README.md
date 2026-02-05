@@ -99,19 +99,19 @@ docker compose logs -f
 ## 4. specific project commands
 
 ```
-# 1. Stop the running containers
+# Stop the running containers
 docker compose -f docker-compose-development.yml down
 
-# 2. (Optional) Remove the old containers completely to ensure a clean start
+# (Optional) Remove the old containers completely to ensure a clean start
 docker compose -f docker-compose-development.yml rm -f
 
-# 3. Start the containers with the updated configuration
+# Start the containers with the updated configuration
 docker compose -f docker-compose-development.yml up -d
 
-# 4. Verify the containers are running
+# Verify the containers are running
 docker compose -f docker-compose-development.yml ps
 
-# 5. (Optional) Check the logs to ensure everything started correctly
+# (Optional) Check the logs to ensure everything started correctly
 docker compose -f docker-compose-development.yml logs -f
 ```
 
